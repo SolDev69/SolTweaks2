@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "soltweaks2",
 	"version": "${version}",
-	"name": "Example mod",
+	"name": "SolTweaks2",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -11,7 +11,7 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "",
 	"icon": "assets/soltweaks2/icon.png",
 	"environment": "*",
 	"entrypoints": {
