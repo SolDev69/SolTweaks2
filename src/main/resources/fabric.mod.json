@@ -11,12 +11,12 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "",
+	"license": "MIT",
 	"icon": "assets/soltweaks2/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"dev.solcraft.soltweaks2.ExampleMod"
+			"dev.solcraft.soltweaks2.SolTweaks2"
 		]
 	},
 	"mixins": [
@@ -24,8 +24,8 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.17.3",
-		"minecraft": ">1.21.11",
-		"java": ">=21",
+		"minecraft": ">=26.1",
+		"java": ">=25",
 		"fabric-api": "*"
 	}
 }
