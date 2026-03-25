@@ -1,6 +1,7 @@
 package dev.solcraft.soltweaks2;
 
-import dev.solcraft.soltweaks2.modblocks.ModBlocks;
+import dev.solcraft.soltweaks2.features.blockentities.ModBlockEntities;
+import dev.solcraft.soltweaks2.features.blocks.ModBlocks;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ public class SolTweaks2 implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModBlocks.initialize();
+		ModBlockEntities.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

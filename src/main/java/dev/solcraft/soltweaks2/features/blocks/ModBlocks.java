@@ -1,4 +1,4 @@
-package dev.solcraft.soltweaks2.modblocks;
+package dev.solcraft.soltweaks2.features.blocks;
 
 import dev.solcraft.soltweaks2.SolTweaks2;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;

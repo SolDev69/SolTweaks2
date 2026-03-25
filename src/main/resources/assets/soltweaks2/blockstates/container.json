@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "full=false": {
+      "model": "soltweaks2:block/container"
+    },
+    "full=true": {
+      "model": "soltweaks2:block/container_full"
+    }
+  }
+}
