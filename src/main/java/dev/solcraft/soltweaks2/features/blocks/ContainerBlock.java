@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
@@ -72,15 +73,18 @@ public class ContainerBlock extends BaseEntityBlock
     public void playerDestroy(
             final Level level, final Player player, final BlockPos pos, final BlockState state, @Nullable final BlockEntity blockEntity, final ItemStack destroyedWith
     ) throws NullPointerException {
-        super.playerDestroy(level, player, pos, state, blockEntity, destroyedWith);
-        if (!destroyedWith.is(Items.SHEARS)) {
-            ContainerBlockEntity containerBlockEntity = (ContainerBlockEntity) blockEntity;
-            if (containerBlockEntity.getContainedE() == null)
-                return;
+        ContainerBlockEntity containerBlockEntity = (ContainerBlockEntity) blockEntity;
+        if (!destroyedWith.is(Items.SHEARS) && containerBlockEntity.getContainedE() != null) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            // Explicity do not drop anything, unlike `super.playerDestroy`
+
             System.out.println("break1");
             System.out.println("break2");
             containerBlockEntity.getContainedE().spawn((ServerLevel) level, pos, EntitySpawnReason.SPAWN_ITEM_USE);
             containerBlockEntity.setContainedE(null);
+        } else {
+            super.playerDestroy(level, player, pos, state, blockEntity, destroyedWith);
         }
     }
 
