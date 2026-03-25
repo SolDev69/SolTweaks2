@@ -9,14 +9,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
@@ -85,8 +81,6 @@ public class ContainerBlock extends BaseEntityBlock
             System.out.println("break2");
             containerBlockEntity.getContainedE().spawn((ServerLevel) level, pos, EntitySpawnReason.SPAWN_ITEM_USE);
             containerBlockEntity.setContainedE(null);
-        } else {
-            ItemStack stack = new ItemStack(this);
         }
     }
 
